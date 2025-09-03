@@ -10,25 +10,28 @@
     <script>
       // Seu código JavaScript aqui
 
-      let nomes = new Array(
-        "Ana",
-        "Bia",
-        "Carlos",
-        "Daniel",
-        "Eduardo",
-        "Fernanda",
-        "Gabriel",
-        "Heloisa",
-        "Igor",
-        "Juliana"
-      );
-      let nome = prompt("Digite um nome:");
-      nomes[nomes.length] = nome;
+      let numeros = []; // Array para os números originais
+      let nsx2 = []; // Array para os números multiplicados por 2
 
-      for (let i = 0; i < nomes.length; i++) {
-        document.write(nomes[i] + "<br>");
+      // Solicita 5 números do usuário
+      for (let i = 0; i < 5; i++) {
+        let ns = parseInt(prompt("Digite um número:"));
+        numeros.push(ns); // Adiciona o número ao primeiro array
+        nsx2.push(ns * 2); // Adiciona o número * 2 ao segundo array
       }
-      document.write("A Lista possui " + nomes.length + " nomes.");
+
+      // Imprime os resultados
+      document.write(
+        "Primeiro array (números originais): " + numeros.join(", ") + "<br>"
+      );
+      document.write(
+        "Segundo array (números x 2): " + nsx2.join(", ") + "<br><br>"
+      );
+
+      // Imprime detalhadamente cada número e seu resultado
+      for (let i = 0; i < numeros.length; i++) {
+        document.write(numeros[i] + " x 2 = " + nsx2[i] + "<br>");
+      }
     </script>
   </body>
 </html>
