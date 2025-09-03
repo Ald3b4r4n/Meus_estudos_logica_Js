@@ -10,11 +10,21 @@
     <script>
       // Seu código JavaScript aqui
 
-      let nomes = ["Antonio", "Rafael", "Luísa"];
+      const carro = {
+        modelo: "Cobalt",
+        ano: 2016,
+        km: 10000,
+        comb: "gasolina",
+        litconsu: 700,
+      };
 
-      for (let i = nomes.length - 1; i >= 0; i--) {
-        document.write(nomes[i] + "<br>");
-      }
+      let consumo = carro.km / carro.litconsu;
+
+      consumo = parseFloat(consumo).toFixed(2);
+
+      alert(
+        ` O carro ${carro.modelo}, ${carro.ano}, fez em média ${consumo} km/L de ${carro.comb}`
+      );
     </script>
   </body>
 </html>
