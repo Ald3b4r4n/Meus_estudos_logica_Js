@@ -8,64 +8,19 @@
   </head>
   <body>
     <script>
-      //       crie um programa que:
+      // Seu código JavaScript aqui
 
-      // Pergunte ao usuário para digitar vários números (um por vez).
+      const n = [2, 3, 5, 6, 2, 1, 0, 9];
+      let found = false;
 
-      // O usuário pode parar digitando a palavra "fim".
-
-      // Quando terminar, o programa deve mostrar:
-
-      // Quantos números foram digitados.
-
-      // Qual foi o maior número.
-
-      // Qual foi o menor número.
-
-      // A média de todos os números digitados.
-
-      // 📌 Regras:
-
-      // Use um array para armazenar os números.
-
-      // Se o usuário não digitar nenhum número antes de "fim", mostre uma mensagem de que nenhum número foi informado.
-
-      // Trate entradas inválidas (letras, símbolos, etc).
-      let numeros = [];
-      let entrada = prompt("Digite um número (ou 'fim' para encerrar):");
-
-      while (entrada !== null && entrada.toLowerCase() !== "fim") {
-        let numero = Number(entrada);
-
-        if (isNaN(numero)) {
-          alert("Valor inválido, digite um número ou 'fim' para encerrar.");
-        } else {
-          numeros.push(numero);
+      for (let i = 0; i < n.length; i++) {
+        if (n[i] === null || n[i] === undefined || isNaN(n[i])) {
+          found = true;
+          break;
         }
-
-        entrada = prompt("Digite um número (ou 'fim' para encerrar):");
       }
 
-      if (numeros.length === 0) {
-        alert("Nenhum número foi informado.");
-      } else {
-        let maior = Math.max(...numeros);
-        let menor = Math.min(...numeros);
-        let soma = 0;
-
-        for (let i = 0; i < numeros.length; i++) {
-          soma += numeros[i];
-        }
-
-        let media = (soma / numeros.length).toFixed(2);
-
-        alert(
-          `Quantidade de números digitados: ${numeros.length}\n` +
-            `Maior número: ${maior}\n` +
-            `Menor número: ${menor}\n` +
-            `Média: ${media}`
-        );
-      }
+      alert("Encotrou, null, undefined ou NaN? " + found);
     </script>
   </body>
 </html>
