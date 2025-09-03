@@ -8,20 +8,13 @@
   </head>
   <body>
     <script>
-      let diasSemana = [
-        "Domingo",
-        "Segunda",
-        "Terça",
-        "Quarta",
-        "Quinta",
-        "Sexta",
-        "Sábado",
-      ];
+      let numeros = ["1", "2", "3", "4", "5"];
 
-      //alertar que dia é hoje
-      let hoje = new Date();
-      let dia = diasSemana[hoje.getDay()];
-      alert("Hoje é " + dia);
+      let soma = 0;
+      for (let i = 0; i < numeros.length; i++) {
+        soma += parseInt(numeros[i]);
+      }
+      document.write("A soma dos números é: " + soma);
     </script>
   </body>
 </html>
