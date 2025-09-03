@@ -8,22 +8,64 @@
   </head>
   <body>
     <script>
-      let numeros = ["1", "2", "3", "4", "5", ["a", "s", "as"], "nova era"];
+      //       crie um programa que:
 
-      //pegar somente os numeros e somar, tratar NAN
-      let soma = 0;
-      for (let i = 0; i < numeros.length; i++) {
-        if (typeof numeros[i] === "string") {
-          soma += parseInt(numeros[i]) || 0;
-        } else if (Array.isArray(numeros[i])) {
-          for (let j = 0; j < numeros[i].length; j++) {
-            if (typeof numeros[i][j] === "string") {
-              soma += parseInt(numeros[i][j]) || 0;
-            }
-          }
+      // Pergunte ao usuário para digitar vários números (um por vez).
+
+      // O usuário pode parar digitando a palavra "fim".
+
+      // Quando terminar, o programa deve mostrar:
+
+      // Quantos números foram digitados.
+
+      // Qual foi o maior número.
+
+      // Qual foi o menor número.
+
+      // A média de todos os números digitados.
+
+      // 📌 Regras:
+
+      // Use um array para armazenar os números.
+
+      // Se o usuário não digitar nenhum número antes de "fim", mostre uma mensagem de que nenhum número foi informado.
+
+      // Trate entradas inválidas (letras, símbolos, etc).
+      let numeros = [];
+      let entrada = prompt("Digite um número (ou 'fim' para encerrar):");
+
+      while (entrada !== null && entrada.toLowerCase() !== "fim") {
+        let numero = Number(entrada);
+
+        if (isNaN(numero)) {
+          alert("Valor inválido, digite um número ou 'fim' para encerrar.");
+        } else {
+          numeros.push(numero);
         }
+
+        entrada = prompt("Digite um número (ou 'fim' para encerrar):");
       }
-      document.write("A soma dos números é: " + soma);
+
+      if (numeros.length === 0) {
+        alert("Nenhum número foi informado.");
+      } else {
+        let maior = Math.max(...numeros);
+        let menor = Math.min(...numeros);
+        let soma = 0;
+
+        for (let i = 0; i < numeros.length; i++) {
+          soma += numeros[i];
+        }
+
+        let media = (soma / numeros.length).toFixed(2);
+
+        alert(
+          `Quantidade de números digitados: ${numeros.length}\n` +
+            `Maior número: ${maior}\n` +
+            `Menor número: ${menor}\n` +
+            `Média: ${media}`
+        );
+      }
     </script>
   </body>
 </html>
