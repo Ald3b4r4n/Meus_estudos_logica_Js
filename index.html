@@ -8,11 +8,20 @@
   </head>
   <body>
     <script>
-      let numeros = ["1", "2", "3", "4", "5"];
+      let numeros = ["1", "2", "3", "4", "5", ["a", "s", "as"], "nova era"];
 
+      //pegar somente os numeros e somar, tratar NAN
       let soma = 0;
       for (let i = 0; i < numeros.length; i++) {
-        soma += parseInt(numeros[i]);
+        if (typeof numeros[i] === "string") {
+          soma += parseInt(numeros[i]) || 0;
+        } else if (Array.isArray(numeros[i])) {
+          for (let j = 0; j < numeros[i].length; j++) {
+            if (typeof numeros[i][j] === "string") {
+              soma += parseInt(numeros[i][j]) || 0;
+            }
+          }
+        }
       }
       document.write("A soma dos números é: " + soma);
     </script>
