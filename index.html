@@ -10,17 +10,11 @@
     <script>
       // Seu código JavaScript aqui
 
-      const n = [2, 3, 5, 6, 2, 1, 0, 9];
-      let found = false;
+      let nomes = ["Antonio", "Rafael", "Luísa"];
 
-      for (let i = 0; i < n.length; i++) {
-        if (n[i] === null || n[i] === undefined || isNaN(n[i])) {
-          found = true;
-          break;
-        }
+      for (let i = nomes.length - 1; i >= 0; i--) {
+        document.write(nomes[i] + "<br>");
       }
-
-      alert("Encotrou, null, undefined ou NaN? " + found);
     </script>
   </body>
 </html>
