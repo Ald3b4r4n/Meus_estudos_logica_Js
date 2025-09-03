@@ -8,30 +8,20 @@
   </head>
   <body>
     <script>
-      // Seu código JavaScript aqui
+      let diasSemana = [
+        "Domingo",
+        "Segunda",
+        "Terça",
+        "Quarta",
+        "Quinta",
+        "Sexta",
+        "Sábado",
+      ];
 
-      let numeros = []; // Array para os números originais
-      let nsx2 = []; // Array para os números multiplicados por 2
-
-      // Solicita 5 números do usuário
-      for (let i = 0; i < 5; i++) {
-        let ns = parseInt(prompt("Digite um número:"));
-        numeros.push(ns); // Adiciona o número ao primeiro array
-        nsx2.push(ns * 2); // Adiciona o número * 2 ao segundo array
-      }
-
-      // Imprime os resultados
-      document.write(
-        "Primeiro array (números originais): " + numeros.join(", ") + "<br>"
-      );
-      document.write(
-        "Segundo array (números x 2): " + nsx2.join(", ") + "<br><br>"
-      );
-
-      // Imprime detalhadamente cada número e seu resultado
-      for (let i = 0; i < numeros.length; i++) {
-        document.write(numeros[i] + " x 2 = " + nsx2[i] + "<br>");
-      }
+      //alertar que dia é hoje
+      let hoje = new Date();
+      let dia = diasSemana[hoje.getDay()];
+      alert("Hoje é " + dia);
     </script>
   </body>
 </html>
