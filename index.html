@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h1>DOM</h1>
+
+    <p id="par">Utilizando DOM com <i>itálico</i></p>
+
     <script>
       // Seu código JavaScript aqui
+      let a = document.getElementById("par").textContent;
 
-      let nome = prompt("digite seu nome: ");
-      let email = prompt("digite seu email: ");
-
-      const pessoa = { nome, email };
-
-      console.log(pessoa);
+      alert(a);
     </script>
   </body>
 </html>
