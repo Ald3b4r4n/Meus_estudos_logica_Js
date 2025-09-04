@@ -9,13 +9,17 @@
   <body>
     <h1>DOM</h1>
 
-    <p id="par">Utilizando DOM com <i>itálico</i></p>
+    <input type="text" id="first" placeholder="Entrada" />
+    <button id="accion" onclick="passar()">Ação</button>
+    <input type="text" id="second" placeholder="Saída" />
 
     <script>
       // Seu código JavaScript aqui
-      let a = document.getElementById("par").textContent;
 
-      alert(a);
+      function passar() {
+        let a = document.getElementById("first").value;
+        document.getElementById("second").value = a;
+      }
     </script>
   </body>
 </html>
