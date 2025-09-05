@@ -7,43 +7,30 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2>Produtos</h2>
-    <table id="list" class="tab">
-      <thead>
-        <tr>
-          <th scope="col">Produto</th>
-          <th scope="col">preço</th>
-          <th scope="col">Estoque</th>
-        </tr>
-      </thead>
-    </table>
+    <h2>Alunos</h2>
+
+    <ul id="list"></ul>
 
     <script>
-      const produto = [
-        { nome: "Leite", preço: 10.0, estoque: 500 },
-        { nome: "Pão de Forma", preço: 13.7, estoque: 100 },
-        { nome: "Milho de Pipoca", preço: 4.99, estoque: 800 },
-        { nome: "Arroz 5kg", preço: 25.9, estoque: 120 },
-        { nome: "Feijão Carioca 1kg", preço: 8.5, estoque: 300 },
-        { nome: "Macarrão Espaguete", preço: 5.75, estoque: 200 },
-        { nome: "Óleo de Soja 900ml", preço: 6.2, estoque: 150 },
-        { nome: "Açúcar Refinado 1kg", preço: 4.3, estoque: 500 },
-        { nome: "Café Torrado 500g", preço: 17.8, estoque: 80 },
-        { nome: "Biscoito Recheado", preço: 3.4, estoque: 600 },
-        { nome: "Refrigerante 2L", preço: 9.99, estoque: 220 },
-        { nome: "Detergente Líquido", preço: 2.49, estoque: 1000 },
-        { nome: "Sabão em Pó 1kg", preço: 12.9, estoque: 95 },
+      const alunos = [
+        { nome: "Rafael", Notas: [10, 6, 7, 9] },
+        { nome: "João", Notas: [4, 6, 3, 6] },
+        { nome: "Alahu", Notas: [6, 6, 6, 6] },
+        { nome: "Pilatos", Notas: [7, 8, 9, 6] },
       ];
 
       const lista = document.getElementById("list");
 
-      produto.forEach((produto) => {
-        lista.innerHTML += `<th scope="row">${
-          produto.nome
-        }</th>  <td>${produto.preço.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-        })}</td> <td>${produto.estoque}</td>`;
+      alunos.forEach((aluno) => {
+        // soma todas as notas
+        let soma = aluno.Notas.reduce((acc, nota) => acc + nota, 0);
+        // calcula a média
+        let media = soma / aluno.Notas.length;
+
+        // adiciona na lista com 1 casa decimal
+        lista.innerHTML += `<li>${aluno.nome} - Média: ${media.toFixed(
+          1
+        )}</li>`;
       });
     </script>
   </body>
